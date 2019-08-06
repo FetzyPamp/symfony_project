@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SiteController!{% endblock %}
+
+{% block body %}
+
+<section class="films">
+
+<film>
+<h2>Titre du film</h2>
+<div class="metadata">Ajouté le 10/05/2018</div>
+<div class="content">
+    <img src="http://placehold.it/950x400" alt="">
+    <p>dqndkjnckjnckjnwcknwknckwnckwcnkcwncwkncwk
+    </p>
+    <p>dqndkjnckjnckjnwcknwknckwnckwcnkcwncwkncwk
+    </p>
+    <a href="{{ path('site_show') }}" class="btn btn-outline-info">Lire la suite</a>
+</section>
+
+{% endblock %}
