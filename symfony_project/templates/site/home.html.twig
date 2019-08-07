@@ -2,8 +2,19 @@
 
 {% block body %}
 
-<h1>Welcome Sweet Home</h1>
-<p>Ben le petos</p>
+<section class="films">
+
+<film>
+<h2>Titre du film</h2>
+<div class="metadata">Ajouté le 10/05/2018</div>
+<div class="content">
+    <img src="http://placehold.it/600x400" alt="">
+    <p>dqndkjnckjnckjnwcknwknckwnckwcnkcwncwkncwk
+    </p>
+    <p>dqndkjnckjnckjnwcknwknckwnckwcnkcwncwkncwk
+    </p>
+    <a href="{{ path('site_show_movie') }}" class="btn btn-outline-danger">En savoir plus...</a>
+</section>
 
 {% endblock %}
 

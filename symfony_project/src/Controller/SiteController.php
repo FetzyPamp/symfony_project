@@ -27,10 +27,18 @@ class SiteController extends AbstractController
     }
 
     /**
-     * @Route("/site/film/12", name="site_show")
+     * @Route("/site/register", name="site_register")
+     */
+    public function register()
+    {
+        return $this->render('site/register.html.twig');
+    }
+
+    /**
+     * @Route("/site/film/12", name="site_show_movie")
      */
     public function show()
     {
-        return $this->render('site/show.html.twig');
+        return $this->render('site/show_movie.html.twig');
     }
 }
