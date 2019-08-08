@@ -10,7 +10,7 @@
 
             {% for myName in genres %}
             {% for element in myName %}
-              <a href="#" class="list-group-item d-flex justify-content-between align-items-center">{{ element.name }}  </a>
+              <a href="#" class="list-group-item d-flex justify-content-between align-items-center text-dark">{{ element.name }}  </a>
             
             {% endfor %}
             {% endfor %}
@@ -25,7 +25,7 @@
                         class="card border-danger mb-3" style="max-width: 20rem;">
                         {# <div class="card-header">{{ result.title }}</div> #}
                         <div class="card-body">
-                            <img src="https://image.tmdb.org/t/p/w500/{{ result.poster_path}}" width="200">
+                            <img src="https://image.tmdb.org/t/p/w500/{{ result.poster_path}}" width="100%">
                         </div>
                     </div>
                 </div>
