@@ -32,9 +32,7 @@
                             <a class="nav-link" href="/site/liste">Ma liste</a>
                         </li>
 
-                         <li class="nav-item">
-                            <a class="nav-link" href="/site/register">Inscription</a>
-                        </li>
+                        
                         {% if not app.user %}
                         <li class="nav-item">
                             <a class="nav-link text-danger" href="{{ path('security_login')}}">Connexion</a>
@@ -54,7 +52,7 @@
                     </form>
                 </div>
             </nav>
-            <div class="container">
+            <div class="">
             {% block body %}{% endblock %}
             <div>
             {% block javascripts %}{% endblock %}
