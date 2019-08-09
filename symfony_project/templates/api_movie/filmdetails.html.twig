@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+
+<section class="films">
+
+<film>
+           <h2>{{ details.title }}</h2>
+           <img src="https://image.tmdb.org/t/p/w500/{{ details.poster_path }}"></img>
+       <div class="content">
+           <div class="metadata">Date de sortie :{{ details.release_date }}
+           </div>
+           <div>
+               {{ details.overview }}
+           </div>
+       </div>
+       <div>
+           <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen frameborder="0" height="315" src="https://www.youtube.com/embed/{{ trailer.results.0.key }}?autoplay=1" width="100%"></iframe>
+       </div>
+   </film>
+</section>{% endblock %}
+
+

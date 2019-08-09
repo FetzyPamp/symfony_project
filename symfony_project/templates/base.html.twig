@@ -6,7 +6,11 @@
             {% block title %}Welcome!
             {% endblock %}
         </title>
-        <link href="https://bootswatch.com/4/cyborg/bootstrap.min.css" rel="stylesheet"> {% block stylesheets %}{% endblock %}
+        
+        {% block stylesheets %}
+        <link href="/style.css" rel="stylesheet">
+        <link href="https://bootswatch.com/4/cyborg/bootstrap.min.css" rel="stylesheet"> 
+        {% endblock %}
         </head>
         <body>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -31,7 +35,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/site/liste">Ma liste</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a class="nav-link" href="/site/inscription">Inscription</a>
+                        </li>
+                        
                         
                         {% if not app.user %}
                         <li class="nav-item">
@@ -41,6 +48,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-danger" href="{{ path('security_logout')}}">Deconnexion</a>
                         </li>
+                        <li class="nav-item">
+                               <a class="nav-link text-danger" href="{{ path('liste') }}">CREATE LIST</a>
+                           </li>
                         {% endif %}
                        
                          

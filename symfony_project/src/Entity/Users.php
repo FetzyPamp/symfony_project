@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -64,6 +66,16 @@ class Users implements UserInterface
      * @ORM\Column(type="boolean")
      */
     private $unsubscribe;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Liste", mappedBy="users", orphanRemoval=true)
+     */
+    private $listes;
+
+    public function __construct()
+    {
+        $this->listes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -149,5 +161,36 @@ class Users implements UserInterface
     public function getRoles()
     {
         return ['ROLE_USER'];
+    }
+
+    /**
+     * @return Collection|Liste[]
+     */
+    public function getListes(): Collection
+    {
+        return $this->listes;
+    }
+
+    public function addListe(Liste $liste): self
+    {
+        if (!$this->listes->contains($liste)) {
+            $this->listes[] = $liste;
+            $liste->setUsers($this);
+        }
+
+        return $this;
+    }
+
+    public function removeListe(Liste $liste): self
+    {
+        if ($this->listes->contains($liste)) {
+            $this->listes->removeElement($liste);
+            // set the owning side to null (unless already changed)
+            if ($liste->getUsers() === $this) {
+                $liste->setUsers(null);
+            }
+        }
+
+        return $this;
     }
 }

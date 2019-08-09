@@ -29,6 +29,7 @@ class SecurityController extends AbstractController
         $user->setAdmin(false);
         $user->setBan(false);
         $user->setUnsubscribe(false);
+        // $user-> new Liste();
 
         if($form->isSubmitted() && $form->isValid())
         {
