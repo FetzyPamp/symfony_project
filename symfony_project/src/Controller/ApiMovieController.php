@@ -14,7 +14,7 @@ class ApiMovieController extends AbstractController
     public function popularMovies(SerializerInterface $serializer)
     {
         
-        $movies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=fe9e318b04bec15f80e7ddf05a462e39');
+        $movies = file_get_contents('https://api.themoviedb.org/3/movie/popular?api_key=f5621d217c7c61f28b699c88eade6ebf&language=en-US&page=1');
         $moviesTab = $serializer->decode($movies, 'json');
         $category=file_get_contents('https://api.themoviedb.org/3/genre/movie/list?api_key=fe9e318b04bec15f80e7ddf05a462e39');
         $categoryTab=$serializer->decode($category, 'json');
@@ -50,7 +50,7 @@ class ApiMovieController extends AbstractController
      */
     public function categoriesMovies(SerializerInterface $serializer, $id)
     {
-        $categoryMovies = file_get_contents('https://api.themoviedb.org/3/list/'.$id.'?api_key=fe9e318b04bec15f80e7ddf05a462e39');
+        $categoryMovies = file_get_contents('https://api.themoviedb.org/3/discover/movie?api_key=f5621d217c7c61f28b699c88eade6ebf&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres='.$id);
         $categoriesTab = $serializer->decode($categoryMovies, 'json');
 
         $category=file_get_contents('https://api.themoviedb.org/3/genre/movie/list?api_key=fe9e318b04bec15f80e7ddf05a462e39');

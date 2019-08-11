@@ -10,8 +10,7 @@
 
             {% for myName in genres %}
             {% for element in myName %}
-              <a href="#" class="list-group-item d-flex justify-content-between align-items-center text-dark">{{ element.name }}  </a>
-            
+              <a href="{{ path('category_movie', { 'id': element.id }) }}" class="list-group-item d-flex justify-content-between align-items-center text-dark">{{ element.name }}  </a>
             {% endfor %}
             {% endfor %}
             

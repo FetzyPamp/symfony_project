@@ -158,9 +158,26 @@ class Users implements UserInterface
 
     public function getSalt(){}
     
-    public function getRoles()
+
+
+      /**
+     * @ORM\column(type="json")
+     */
+    private $roles=[];   
+    public function getRoles() : array
     {
-        return ['ROLE_USER'];
+        $roles = $this->roles;
+
+        if($this->getAdmin()== true)
+        {
+            $roles[]='ROLE_ADMIN';
+        }
+        else{
+            $roles[]='ROLE_USER';
+        }
+
+        return array_unique($roles);
+        
     }
 
     /**
