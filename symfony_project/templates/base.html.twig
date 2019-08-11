@@ -36,7 +36,7 @@
                             <a class="nav-link" href="/site/liste">Ma liste</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/site/inscription">Inscription</a>
+                            <a class="nav-link" href="{{ path('security_regristration')}}">Inscription</a>
                         </li>
                         
                         
@@ -50,7 +50,13 @@
                         </li>
                         <li class="nav-item">
                                <a class="nav-link text-dark" href="{{ path('liste') }}">Create liste</a>
-                           </li>
+                        </li>
+
+                        {# <li class="nav-item">
+                               <a class="nav-link text-dark" href="{{ path('mon_compte') }}">Mon compte</a>
+                        </li> #}
+
+                           
                         {% endif %}
 
                         {% if is_granted('ROLE_ADMIN') %}
