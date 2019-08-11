@@ -34,4 +34,12 @@ class SiteController extends AbstractController
     {
         return $this->render('site/show_movie.html.twig');
     }
+
+    /**
+     * @Route("/site/inscription", name="inscription")
+     */
+    public function register()
+    {
+        return $this->render('site/show_movie.html.twig');
+    }
 }

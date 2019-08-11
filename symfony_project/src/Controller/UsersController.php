@@ -91,9 +91,4 @@ class UsersController extends AbstractController
 
         return $this->redirectToRoute('users_index');
     }
-
-    // public function form(Users $user, Request $request, ObjectManager $manager)
-    // {
-    //     $user = new Users
-    // }
 }
